@@ -8,6 +8,17 @@ import json
 class color:
     RED = '\033[91m'
 
+
+class paramsZat:
+    head = "50.02%"
+    trunk = "44.86%"
+    arm = "55.02%"
+    forearm = "57.26%"
+    hand = "63.09%"
+    thigh = "45.49%"
+    leg = "40.47%"
+    foot = "55.85%"
+
 # Escolhe um goleiro aleatoriamente
 # Talvez não seja necessário
 def escolher_goleiro(data):
@@ -21,6 +32,18 @@ data_goleiros = json.load(f)
 # Escolhendo um goleiro
 goleiro = escolher_goleiro(data_goleiros)
 print(goleiro)
+
+#valores seguindo tabela de zat: parâmetros anatômicos
+print("Tabela de Parâmetros Antropométricos (Centro de MASSA)")
+print(f"""Cabeça: {paramsZat.head}
+Tronco: {paramsZat.trunk}
+Braço: {paramsZat.arm}
+Antebraço: {paramsZat.forearm}
+Mão: {paramsZat.hand}
+Coxa: {paramsZat.thigh}
+Perna: {paramsZat.leg}
+Pé: {paramsZat.foot}
+""")
 
 # Valores sobre as dimensões da elipse POK (extraídos da primeira etapa do GP 2)
 s = 2.12183514 # DeltaX
@@ -39,6 +62,6 @@ def calc_CM(m, h):
 
 print("Central de Testes")
 print(f"Com base na trajetória do goleiro {goleiro}, seu centro de MASSA é {calc_CM()}!")
-print(f"{color.RED}**** Método Utilizado: Zatsiorsky ****")
+print("**** Método Utilizado: Zatsiorsky ****")
 # fecha o arquivo
 f.close()
