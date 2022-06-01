@@ -8,8 +8,9 @@ Com os dados coletados, o objetivo deste projeto é montar o time perfeito e esc
 
 
 ## Etapa 2: Trajetória de Centro de Massa do Goleiro
-Utilizando os dados da equipe 2 (Arco da Elipse POK), aplicamos juntamente com o método de Zatsiorsky.
-Centro de massa do goleiro baseado nos parâmetros antropométricos.
+Utilizando os dados da equipe 2 **(Arco da Elipse POK)**, aplicamos juntamente com o método de Zatsiorsky.
+
+>Centro de massa do goleiro baseado nos parâmetros antropométricos.
 
 
 ## Etapa 3: Aplicação de Interpolação e Ajuste de Curvas
