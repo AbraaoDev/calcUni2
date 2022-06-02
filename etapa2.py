@@ -52,16 +52,30 @@ k = 3.08507778 # DeltaY
 # Valores padrões do goleiro, para testes
 h_goleiro = 1.88
 m_goleiro = 80.58
+select = print(f'Altura: {h_goleiro} e Massa: {m_goleiro}')
 
 # * Desenvolvimento do projeto a seguir, usando o método precisa apenas da massa corporal e de sua estatura
 def calc_CM(m, h):
-    form = (s*m + k*h)**2 / 4
+    #calculo da massa conforme tabela -> tronco e braço
+    m1 = (m * 44.86/100)
+    m2 = (m * 55.02/100)
+   
+
+    # massa total 
+    mzao  = m1 + m2
+
+    #vetores posição de acordo com o deslocamento na elipse
+    r1 = 1 / mzao * (m1*s) #somatório do eixo X da elipse
+    r2 = 1 / mzao * (m2*k)
+
+    #centro da massa = vetor posição (somatório de acordo com elipse)
+    form = (m1*r1 + m2*r2) / mzao
 
     return form
 
 
 print("Central de Testes")
-print(f"Com base na trajetória do goleiro {goleiro}, seu centro de MASSA é {calc_CM()}!")
+print(f"Com base na trajetória do goleiro {select}, seu centro de MASSA é {calc_CM(m_goleiro, h_goleiro)}!")
 print("**** Método Utilizado: Zatsiorsky ****")
 # fecha o arquivo
 f.close()
