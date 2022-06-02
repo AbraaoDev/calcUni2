@@ -45,15 +45,15 @@ Perna: {paramsZat.leg}
 Pé: {paramsZat.foot}
 """)
 
-# Valores sobre as dimensões da elipse POK (extraídos da primeira etapa do GP 2)
-s = 2.12183514 # DeltaX
-k = 3.08507778 # DeltaY
-
 # Valores padrões do goleiro, para testes
 h_goleiro = 1.88
 m_goleiro = 80.58
-select = print(f'Altura: {h_goleiro} e Massa: {m_goleiro}')
 
+
+
+# Valores sobre as dimensões da elipse POK (extraídos da primeira etapa do GP 2)
+s = 2.12183514 # DeltaX
+k = 3.08507778 # DeltaY
 # * Desenvolvimento do projeto a seguir, usando o método precisa apenas da massa corporal e de sua estatura
 def calc_CM(m, h):
     #calculo da massa conforme tabela -> tronco e braço
@@ -75,7 +75,7 @@ def calc_CM(m, h):
 
 
 print("Central de Testes")
-print(f"Com base na trajetória do goleiro {select}, seu centro de MASSA é {calc_CM(m_goleiro, h_goleiro)}!")
+print(f"Com base na trajetória do goleiro -> Altura: {h_goleiro} e Massa: {m_goleiro}, seu centro de MASSA é {calc_CM(m_goleiro, h_goleiro):2f} no Tronco e no Braço!")
 print("**** Método Utilizado: Zatsiorsky ****")
 # fecha o arquivo
 f.close()
